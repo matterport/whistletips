@@ -12,20 +12,33 @@ pip:
 ./setup.py install
 ```
 
+or
+
+```
+pip install whistletips
+```
+
 # Usage
 
 ## wt-lb
 
 ```
-(venv) #$ ./wt-lb.py qa1
+$ ./wt-lb.py qa1
 ['qa1-web-1', 'qa1-web-0']
-(venv) #$ ./wt-lb.py qa1 --rm qa1-web-1
-(venv) #$ ./wt-lb.py qa1
+$ ./wt-lb.py qa1 --rm qa1-web-1
+$ ./wt-lb.py qa1
 ['qa1-web-0']
-(venv) #$ ./wt-lb.py qa1 --add qa1-web-1
-(venv) #$ ./wt-lb.py qa1
+$ ./wt-lb.py qa1 --add qa1-web-1
+$ ./wt-lb.py qa1
 ['qa1-web-1', 'qa1-web-0']
-(venv) #$
+```
+
+## As a library
+
+```
+import whistletips as wt
+
+wt.list_instance_ids('dev-*')
 ```
 
 # Developing
